@@ -1,0 +1,36 @@
+{
+  "name": "wish-portal",
+  "version": "1.0.0",
+  "description": "wish portal for cny interactive",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "jshint ./",
+    "dev": "sudo nodemon server.js"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stanleynguyen/cny-interactive.git"
+  },
+  "author": "stanleynguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanleynguyen/cny-interactive/issues"
+  },
+  "homepage": "https://github.com/stanleynguyen/cny-interactive#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.2"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0",
+    "jshint": "^2.9.4",
+    "nodemon": "^1.11.0",
+    "pre-commit": "^1.2.0"
+  }
+}
