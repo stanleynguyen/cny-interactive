@@ -9,10 +9,6 @@
     "dev": "sudo nodemon server.js",
     "test": "exit 1;"
   },
-  "pre-commit": [
-    "test",
-    "lint"
-  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/stanleynguyen/cny-interactive.git"
@@ -34,7 +30,6 @@
   "devDependencies": {
     "dotenv": "^2.0.0",
     "jshint": "^2.9.4",
-    "nodemon": "^1.11.0",
-    "pre-commit": "^1.1.3"
+    "nodemon": "^1.11.0"
   }
 }
