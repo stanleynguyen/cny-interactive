@@ -5,10 +5,12 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "lint": "jshint ./",
-    "dev": "sudo nodemon server.js"
+    "lint": "jshint ./; exit 2;",
+    "dev": "sudo nodemon server.js",
+    "test": "exit 1;"
   },
   "pre-commit": [
+    "test",
     "lint"
   ],
   "repository": {
@@ -33,6 +35,6 @@
     "dotenv": "^2.0.0",
     "jshint": "^2.9.4",
     "nodemon": "^1.11.0",
-    "pre-commit": "^1.2.0"
+    "pre-commit": "^1.1.3"
   }
 }
