@@ -23,9 +23,11 @@
   "homepage": "https://github.com/stanleynguyen/cny-interactive#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "ddos": "^0.1.11",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
-    "mongoose": "^4.7.2"
+    "mongoose": "^4.7.2",
+    "stream-browserify": "^2.0.1"
   },
   "devDependencies": {
     "dotenv": "^2.0.0",
