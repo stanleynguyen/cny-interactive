@@ -31,7 +31,7 @@ app.post('/', (req, res) => {
   let filtered = false;
   let newWish = new Wish({ content, author, time, filtered });
   newWish.save((err) => {
-    if (err) res.status(500).send('Failed to save to database');
+    if (err) return res.status(500).send('Failed to save to database');
     res.status(200).send('Successfully sent wish');
   });
 });
