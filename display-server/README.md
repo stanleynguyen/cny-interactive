@@ -19,3 +19,17 @@ method: GET
 url: '/api/wishes/unfiltered'
 method: GET
 ```
+
+```javascript
+//this endpoint is for approving a wish
+url: '/api/wishes'
+method: POST
+params: { id: <id-of-the-wish> }
+```
+
+```javascript
+//this endpoint is for disapproving a wish (and delete it)
+url: '/api/wishes'
+method: DELETE
+params: { id: <id-of-the-wish> }
+```

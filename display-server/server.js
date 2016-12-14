@@ -39,13 +39,42 @@ app.get('/api/wishes/unfiltered', (req, res) => {
   });
 });
 
-app.get('api/wishes/filtered', (req, res) => {
+app.get('/api/wishes/filtered', (req, res) => {
   mongoose.connection.db.collection('wishes', (err, collection) => {
     if (err) return res.status(500).send('Database Error');
     collection.find({filtered: true}).toArray((err, docs) => {
       if (err) return res.status(500).send('Database Error');
       res.json(docs);
     });
+  });
+});
+
+app.post('/api/wishes', (req, res) => {
+  mongoose.connection.db.collection('wishes', (err, collection) => {
+    if (err) return res.status(500).send('Database Error');
+    collection.findOneAndUpdate(
+      { _id: mongoose.Types.ObjectId(req.body.id) },
+      {
+        $set: { filtered: true }
+      },
+      (err) => {
+        if (err) return res.status(500).send('Database Error');
+        res.status(200).send('Success');
+      }
+    );
+  });
+});
+
+app.delete('/api/wishes', (req, res) => {
+  mongoose.connection.db.collection('wishes', (err, collection) => {
+    if (err) return res.status(500).send('Database Error');
+    collection.findOneAndDelete(
+      { _id: mongoose.Types.ObjectId(req.body.id) },
+      (err) => {
+        if (err) return res.status(500).send('Database Error');
+        res.status(200).send('Success');
+      }
+    );
   });
 });
 
