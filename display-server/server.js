@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/admin', (req, res) => {
+  res.render('admin');
+});
+
 app.get('/api/wishes/all', (req, res) => {
   mongoose.connection.db.collection('wishes', (err, collection) => {
     if (err) return res.status(500).send('Database Error');
