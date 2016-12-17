@@ -1,0 +1,93 @@
+@font-face {
+	font-family: 'League Gothic';
+	src: url('fonts/leaguegothic-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Chinese';
+	src: url('fonts/chinese.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	margin: 0 0 0 0;
+	color: #f44336;
+}
+
+h1 {
+	font-family: 'League Gothic';
+	display: block;
+	font-size: 36px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h1.chinese {
+	font-family: 'Chinese';
+	font-size: 64px;
+}
+
+.display {
+	height: 100%;
+}
+
+.display p {
+	font-family: 'League Gothic';
+	font-size: 64px;
+	text-align: center;
+}
+
+.scroll-wrapper {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+.scroll {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+	background: none;
+}
+
+.scroll h1 {
+	position: relative;
+	width: auto;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	white-space: nowrap;
+
+	-moz-animation: scroll 20s linear infinite;
+	-webkit-animation: scroll 20s linear infinite;
+	animation: scroll 20s linear infinite;
+}
+
+@-moz-keyframes scroll {
+	0% { -moz-transform: translateX(100%); }
+	100% { -moz-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes scroll {
+	0% { -webkit-transform: translateX(100%); }
+	100% { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes scroll {
+	0% {
+		moz-transform: translateX(100%);
+		webkit-transform: translateX(100%);
+		transform: translateX(100%); 		
+	}
+	100% { 
+		moz-transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%); 
+ 	}
+}
