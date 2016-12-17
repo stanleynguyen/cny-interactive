@@ -1,1 +1,31 @@
-<h1>CNY Interactive</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CNY Greetings!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/index/css/styles.css">
+</head>
+<body background="/img/background.jpg">
+	<img src="/img/banner.jpg" width="100%">
+	<div>
+		<h1 class="chinese">新年快樂!</h1>
+		<h1>Happy Chinese New Year!</h1>
+	</div>
+
+	<div>
+		<form id="wish-form">
+			<textarea class="input" id="greeting" name="greeting" type="text" placeholder="Enter your New Year greetings here!" maxlength="140" rows="5"></textarea>
+			<div id="greetingCounter"><p class="counter">0/140</p></div>
+
+			<p>Name</p>
+			<input class="input" id="name" name="name" type="text" placeholder="Enter your name here" maxlength="30">
+			<div id="nameCounter"><p class="counter">0/30</p></div>
+
+			<input id="submit-button" class="button" name="buttonExecute" type="submit" value="SUBMIT">
+		</form>
+	</div>
+  <script src="/index/js/application.js"></script>
+</body>
+</html>
