@@ -1,13 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const helmet = require('helmet');
+const auth = require('http-auth');
+const basic = auth.basic({ realm: 'CNY Interactive Admin' }, (admin, password, done) => {
+  done(admin === process.env.ADMIN && password === process.env.PASSWORD);
+});
 
-dotenv.load();
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  dotenv.load();
+}
 
 const app = express();
 app.use(helmet());
+app.use(auth.connect(basic));
 app.set('view engine', 'ejs');
 app.use(express.static('./views/public'));
 app.use(bodyParser.urlencoded({extended: true}));
