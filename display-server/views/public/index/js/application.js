@@ -5,7 +5,6 @@ var $wishContainer = $("#wish-container");
 
 $(document).ready(function() {
   fetchWishes(displayText);
-	setInterval(fetchWishes.bind(event, displayText), 5000);
 });
 
 function fetchWishes(callback) {
@@ -36,5 +35,8 @@ function displayText(err, wishes) {
     wish = wishes[randomIndex].content;
   }
 	$textObj.text(wish);
-	$wishContainer.hide().fadeIn(1000).delay(3000).fadeOut(1000);
+	$wishContainer.hide()
+    .fadeIn(1000)
+    .delay(3000)
+    .fadeOut(1000, fetchWishes.bind(event, displayText));
 }
