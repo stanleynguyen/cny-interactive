@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const helmet = require('helmet');
 const xss = require('xss');
 const ddos = new (require('ddos'))();
 
-dotenv.load();
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  dotenv.load();
+}
 
 const app = express();
 app.use(ddos.express);
