@@ -24,6 +24,7 @@
     "ddos": "^0.1.11",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
+    "helmet": "^3.1.0",
     "mongoose": "^4.7.2",
     "stream-browserify": "^2.0.1"
   },
