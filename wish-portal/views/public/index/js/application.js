@@ -17,7 +17,7 @@ function textCounter(input, output, charLimit) {
 function submitWish(contentInput, authorInput) {
   event.preventDefault();
   $submitButton.disabled = true;
-  $submitButton.value = 'SUBMITTING...';
+  //$submitButton.value = 'SUBMITTING...';
   var data = 'content=' + encodeURIComponent(contentInput.value) + '&author=' + encodeURIComponent(authorInput.value);
   var request = new XMLHttpRequest();
   request.open('POST', '/', true);

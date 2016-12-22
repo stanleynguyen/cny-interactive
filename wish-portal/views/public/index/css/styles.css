@@ -1,50 +1,56 @@
-@font-face {
-	font-family: 'League Gothic';
-	src: url('fonts/leaguegothic-regular-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Chinese';
-	src: url('fonts/chinese.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+html {
+	height: 100%;
+	width: 100%;
 }
 
 body {
-	color: #f44336;
-	margin: 0 0 0 0;
+	color: #ffebee;
+	margin: auto;
+
+	min-height: 100%;
+	min-width: 100%;
+
+	background: url(/img/background.png) no-repeat 0 0 fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-h1 {
-	font-family: 'League Gothic';
+form {
+	padding-top: 50%;
+}
+
+span {
 	display: block;
-	font-size: 36px;
-	font-weight: 400;
-	text-align: center;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-h1.chinese {
-	font-family: 'Chinese';
-	font-size: 64px;
+	overflow: hidden;
+	padding: 0 5px 5px 0;
 }
 
 p {
 	font-family: Roboto;
-	font-size: 20px;
-	margin-left: 1%;
-	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+p.label {
+	padding: 2.5px 0 0 0;
+	margin: 0;
 }
 
 p.counter {
 	font-size: 12px;
-	color: #808080;
 	text-align: right;
-	margin-top: 2px;
-	margin-right: 1%;
+	margin: 2px 1% 0 0;
+}
+
+p#nameLabel {
+	float: left;
+	margin-right: 10px;
+}
+
+p#greetingLabel {
+	margin-top: 12px;
+	margin-bottom: 5px;
 }
 
 textarea {
@@ -53,44 +59,67 @@ textarea {
 
 .input {
 	font-family: Roboto;
-	font-size: 16px;
-	width: 98%;
+	font-size: 12px;
 	box-sizing: border-box;
-	padding: 10px;
-	margin: 1%;
-	background-color: rgba(255,255,255,0.2);
-	outline: none;
-	border: none;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	background-color: rgba(242, 227, 204, 0.9);
+	border: 1.5px solid #212121;
+	border-radius: 2px;
 	transition: border 0.3s;
+	box-shadow: 2px 2px 5px #212121;
 }
+
+.input#name {
+	width: 100%;
+}
+
 
 .button {
 	-webkit-appearance: none;
+	background: url(/img/button.png);
+	background-size: 100% 100%;
 	display: block;
-	font-family: Roboto;
-	font-size: 16px;
-	font-weight: bold;
 	margin: auto;
-	margin-top: 16px;
-	margin-bottom: 16px;
-	border-style: solid;
-	border-color: #ff0000;
-	background-color: rgba(255,138,128,0.5);
-	color: #ff0000;
-	outline: 3px;
-	padding: 20px 60px;
-	letter-spacing: 1.5px;
+	border: none;
+	padding: 10px 40px;
 	cursor: pointer;
 }
 
-.button:hover {
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+#content {
+	width: 80%;
+	margin: 10%;
 }
 
-.button:active {
-	background-color: rgba(255,82,82,0.5);
+input::-webkit-input-placeholder {
+color: #757575 !important;
+}
+ 
+input:-moz-placeholder {
+color: #757575 !important;
+}
+ 
+input::-moz-placeholder {
+color: #757575 !important;
+}
+ 
+input:-ms-input-placeholder {  
+color: #757575 !important;
 }
 
-.text-center {
-  text-align: center;
+textarea::-webkit-input-placeholder {
+color: #757575 !important;
+}
+ 
+textarea:-moz-placeholder {
+color: #757575 !important;
+}
+ 
+textarea::-moz-placeholder {
+color: #757575 !important;
+}
+ 
+textarea:-ms-input-placeholder {  
+color: #757575 !important;
 }
