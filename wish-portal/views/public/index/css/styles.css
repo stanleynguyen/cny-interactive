@@ -6,6 +6,7 @@ html {
 body {
 	color: #ffebee;
 	margin: auto;
+	position: fixed;
 
 	min-height: 100%;
 	min-width: 100%;
@@ -18,7 +19,8 @@ body {
 }
 
 form {
-	padding-top: 50%;
+	margin: auto;
+	padding-top: 60%;
 }
 
 span {
