@@ -5,7 +5,7 @@ html {
 
 body {
 	color: #ffebee;
-	background: url(/img/background.png) no-repeat center center fixed;
+	background: url(/img/background.svg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -78,13 +78,18 @@ textarea {
 
 
 .button {
+	font-family: Roboto;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	color: #f44336;
 	-webkit-appearance: none;
-	background: url(/img/button.png);
+	background: url(/img/button.svg);
 	background-size: 100% 100%;
 	display: block;
 	margin: auto;
 	border: none;
-	padding: 10px 40px;
+	padding: 16px 64px;
 	cursor: pointer;
 }
 
