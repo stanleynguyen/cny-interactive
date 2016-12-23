@@ -5,22 +5,21 @@ html {
 
 body {
 	color: #ffebee;
-	margin: auto;
-	position: fixed;
-
-	min-height: 100%;
-	min-width: 100%;
-
-	background: url(/img/background.png) no-repeat 0 0 fixed;
+	background: url(/img/background.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
 
+#content {
+  display: block;
+	margin: auto;
+}
+
 form {
 	margin: auto;
-	padding-top: 60%;
+	margin-top: 30vh;
 }
 
 span {
@@ -97,31 +96,31 @@ textarea {
 input::-webkit-input-placeholder {
 color: #757575 !important;
 }
- 
+
 input:-moz-placeholder {
 color: #757575 !important;
 }
- 
+
 input::-moz-placeholder {
 color: #757575 !important;
 }
- 
-input:-ms-input-placeholder {  
+
+input:-ms-input-placeholder {
 color: #757575 !important;
 }
 
 textarea::-webkit-input-placeholder {
 color: #757575 !important;
 }
- 
+
 textarea:-moz-placeholder {
 color: #757575 !important;
 }
- 
+
 textarea::-moz-placeholder {
 color: #757575 !important;
 }
- 
-textarea:-ms-input-placeholder {  
+
+textarea:-ms-input-placeholder {
 color: #757575 !important;
 }
