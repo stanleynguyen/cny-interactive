@@ -7,7 +7,25 @@
   <link rel="stylesheet" href="/admin/css/stylesheet.css" />
 </head>
 <body>
-  <div class="container" id="unfiltered-wishes">
+  <div class="container">
+    <div class="alert alert-warning">
+      Looks like you don't allow notification. Here is how to allow notification on
+      <a href="https://support.google.com/chrome/answer/3220216?hl=en" target="_blank">Chrome</a>
+      or
+      <a href="https://support.apple.com/kb/PH21493?locale=en_US&viewlocale=en_US" target="_blank">Safari</a>
+      or
+      <a href="https://support.mozilla.org/en-US/kb/push-notifications-firefox?as=u&utm_source=inproduct#w_upgraded-notifications" target="_blank">Firefox</a>
+      . Or you should check back this
+      page very frequently since there's no notification
+    </div>
+    <div class="alert alert-danger">
+      <div>
+        <span><strong>New unfiltered wishes waiting to be filtered!</strong></span>
+        <p class="btn btn-danger" id="reload">Reload</p>
+      </div>
+    </div>
+    <div id="unfiltered-wishes"></div>
+    <audio id="ding" hidden><source src="/sound/ding.mp3" type="audio/mpeg"/></audio>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

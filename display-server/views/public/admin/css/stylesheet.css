@@ -1,3 +1,7 @@
+.container {
+  margin-top: 20px;
+}
+
 #unfiltered-wishes {
   margin-top: 20px;
 }
@@ -8,4 +12,22 @@
 
 #unfiltered-wishes blockquote footer {
   font-size: 18px;
+}
+
+.alert {
+  display: none;
+}
+
+.alert .btn-danger {
+  float: right;
+}
+
+.alert-danger span {
+  line-height: 34px;
+}
+
+.alert-danger > div:after {
+  clear: both;
+  content: '';
+  display: table;
 }
