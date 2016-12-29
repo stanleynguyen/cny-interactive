@@ -85,11 +85,14 @@ textarea {
 	color: #f44336;
 	-webkit-appearance: none;
 	background: url(/img/button.svg);
-	background-size: 100% 100%;
+	background-size: cover;
+	width: 192px;
 	display: block;
 	margin: auto;
 	border: none;
-	padding: 16px 64px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px #212121;
+	padding: 20px 0px 12px 0px;
 	cursor: pointer;
 }
 
