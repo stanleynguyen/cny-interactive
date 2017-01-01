@@ -16,6 +16,11 @@ app.use(helmet());
 app.set('view engine', 'ejs');
 app.use(express.static('./views/public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://chinatownfestivals.sg");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 mongoose.connect(process.env.DB);
 mongoose.Promise = global.Promise;
