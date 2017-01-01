@@ -13,32 +13,19 @@
 }
 
 body {
-	margin: 0 0 0 0;
-	color: #f44336;
+	margin: 0;
+	overflow: hidden;
 }
 
-h1 {
+.lantern {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 100%;
+
 	font-family: 'League Gothic';
-	display: block;
-	font-size: 36px;
-	font-weight: 400;
-	text-align: center;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-h1.chinese {
-	font-family: 'Chinese';
-	font-size: 64px;
-}
-
-.display {
-	height: 100%;
-}
-
-.display p {
-	font-family: 'League Gothic';
-	font-size: 64px;
+	font-size: 24px;
+	color: white;
 	text-align: center;
 }
 
@@ -55,13 +42,17 @@ h1.chinese {
 	background: none;
 }
 
-.scroll h1 {
-	position: relative;
+.scroll p {
+	font-family: 'League Gothic';
+	font-size: 36px;
+	font-weight: 400;
+	color: #f44336;
+	text-align: center;
+	display: block;
 	width: auto;
 	height: 100%;
 	margin: 0;
 	line-height: 50px;
-	text-align: center;
 	white-space: nowrap;
 
 	-moz-animation: scroll 20s linear infinite;
