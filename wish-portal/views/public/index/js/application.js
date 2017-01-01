@@ -16,11 +16,15 @@ function textCounter(input, output, charLimit) {
 
 function submitWish(contentInput, authorInput) {
   event.preventDefault();
+  if (!contentInput.value || !authorInput.value || contentInput.value === '' || authorInput.value === '') {
+    alert('Please fill in all form fields!');
+    return;
+  }
   $submitButton.disabled = true;
   $submitButton.value = '正在提交 / SUBMITTING...';
   var data = 'content=' + encodeURIComponent(contentInput.value) + '&author=' + encodeURIComponent(authorInput.value);
   var request = new XMLHttpRequest();
-  request.open('POST', '/', true);
+  request.open('POST', 'https://cny-interactive.herokuapp.com/' , true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.onreadystatechange = function() {
     if (request.readyState === 4) {
@@ -28,8 +32,15 @@ function submitWish(contentInput, authorInput) {
         $form.innerHTML = '<p class="text-center">Thanks for your wish!<br>Have a great year ahead!</p>';
       } else if (request.status === 500) {
         alert('Server Error! Try again!');
+        $submitButton.disabled = false;
+        $submitButton.value = '提交 / SUBMIT';
       }
     }
+  };
+  request.onerror = function() {
+    alert('An error has occured! Please try again later');
+    $submitButton.disabled = false;
+    $submitButton.value = '提交 / SUBMIT';
   };
   request.send(data);
 }
