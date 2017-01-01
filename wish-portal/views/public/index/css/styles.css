@@ -5,11 +5,12 @@ html {
 
 body {
 	color: #ffebee;
-	background: url(/img/background.svg) no-repeat center center fixed;
+	background: url(/img/background.svg) no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+  min-height: 162vw;
 }
 
 #content {
@@ -19,7 +20,7 @@ body {
 
 form {
 	margin: auto;
-	margin-top: 30vh;
+	padding-top: 50vw;
 }
 
 span {
