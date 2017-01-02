@@ -35,10 +35,10 @@ function generateLantern(err, wishes) {
 
   if (wishes.length > counter) {
     counter++;
-    wish = wishes[counter-1].content;
+    wish = wishes[counter-1];
   } else {
     randomIndex = Math.round(Math.random() * ( counter - 1 ));
-    wish = wishes[randomIndex].content;
+    wish = wishes[randomIndex];
   }
 
   $wishContainer.append($(lantern(lanternCounter, wish)))
@@ -60,8 +60,9 @@ function animateLaterns(id) {
   );
 }
 
-var lantern = function(id, content) {
+var lantern = function(id, wish) {
   return '<div class="lantern" id="lantern-' + id + '">' +
-          '<p>' + content + '</p>' +
+          '<p class="content">' + wish.content + '</p>' +
+          '<p class="author">' + wish.author + '</p>' +
          '</div>';
 };
