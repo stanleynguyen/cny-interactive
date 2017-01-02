@@ -6,8 +6,8 @@ var $nameCounter = document.getElementById('nameCounter');
 var $form = document.getElementById('wish-form');
 var $submitButton = document.getElementById('submit-button');
 
-$greetingInput.addEventListener('keyup', textCounter.bind(event, $greetingInput, $greetingCounter, 140));
-$nameInput.addEventListener('keyup', textCounter.bind(event, $nameInput, $nameCounter, 30));
+$greetingInput.addEventListener('keyup', textCounter.bind(event, $greetingInput, $greetingCounter, 70));
+$nameInput.addEventListener('keyup', textCounter.bind(event, $nameInput, $nameCounter, 20));
 $form.addEventListener('submit', submitWish.bind(event, $greetingInput, $nameInput));
 
 function textCounter(input, output, charLimit) {
