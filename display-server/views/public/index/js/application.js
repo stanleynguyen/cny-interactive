@@ -80,6 +80,7 @@ function animateLaterns(id, isChineseAndShort, isChineseAndLong, isVip) {
     setTimeout(playFireworks, 8000);
   }
   var duration = 30000 + (Math.random() * 5000);
+  if (isVip) duration += 15000;
   thisLantern.animate(
     {top: - thisLantern.height() + 'px'},
     duration,
