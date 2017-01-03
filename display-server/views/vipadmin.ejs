@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <title>CNY Interactive Admin for Vips</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/admin/css/stylesheet.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="unfiltered-wishes"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      loadUnfilteredWishes();
+      $(document).on('click', '.wish .btn-success', function(event) {
+        var $target = $(event.currentTarget);
+        $target.prop('disabled', 'true');
+        var wishId = $target.parent().attr('id');
+        $target.text('Approving...');
+        $target.prop('disabled', 'true');
+        filterWish(wishId);
+      });
+    });
+
+    function loadUnfilteredWishes() {
+      $.ajax({
+        url: '/api/vipadminonly',
+        method: 'GET'
+      }).done(function(res) {
+        var wishContainer = $('#unfiltered-wishes');
+        wishContainer.html('');
+        res.forEach(function(currentWish) {
+          wishContainer.append(wish(currentWish._id, currentWish.content, currentWish.author));
+        });
+        $('.alert-danger').hide();
+      }).fail(function(e) {
+        alert(e.message);
+      });
+    }
+
+    function filterWish(wishId) {
+      $.ajax({
+        url: '/api/vipadminonly',
+        method: 'POST',
+        data: { id: wishId, isVip: true }
+      }).done(function() {
+        $('#' + wishId).parent().remove();
+      }).fail(function(e) {
+        alert(e.status);
+        $('.btn-success').text('Approve');
+        $('.btn-success').prop('disabled', 'false');
+      });
+    }
+
+    var wish = function(wishId, wishContent, wishAuthor) {
+      return `
+      <div class="jumbotron wish">
+        <form id="${wishId}">
+          <blockquote>
+            <p>${wishContent}</p>
+            <footer>${wishAuthor}</footer>
+          </blockquote>
+          <button class="btn btn-success form-control" type="button">Approve</button>
+        </form>
+      </div>
+      `;
+    };
+  </script>
+</body>

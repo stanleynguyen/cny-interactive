@@ -46,7 +46,7 @@ function loadUnfilteredWishes() {
     });
     $('.alert-danger').hide();
   }).fail(function(e) {
-    alert(e.message);
+    alert(e.status);
   });
 }
 
@@ -74,14 +74,14 @@ function filterWish(accept, wishId) {
   }).done(function() {
     $('#' + wishId).parent().remove();
   }).fail(function(e) {
-    alert(e.message);
+    alert(e.status);
     accept ? resetAllBtnSuccess() : resetAllBtnDanger();
   });
 }
 
 //helper functions
 function resetAllBtnSuccess() {
-  $('.btn-success').text('Accept');
+  $('.btn-success').text('Approve');
   $('.btn-success').prop('disabled', 'false');
 }
 

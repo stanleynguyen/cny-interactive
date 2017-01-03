@@ -46,7 +46,8 @@ app.post('/', (req, res) => {
   author = xss(author);
   let time = Date.now();
   let filtered = false;
-  let newWish = new Wish({ content, author, time, filtered });
+  let isVip = false;
+  let newWish = new Wish({ content, author, time, filtered, isVip });
   newWish.save((err) => {
     if (err) return res.status(500).send('Failed to save to database');
     res.status(200).send('Successfully sent wish');

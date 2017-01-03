@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  dotenv.load();
+}
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -12,10 +17,9 @@ const admin = auth.basic({realm: 'CNY Interactive Admin'}, (admin, password, don
   done(admin === process.env.ADMIN && password === process.env.PSSWD);
 });
 
-if (process.env.NODE_ENV !== 'production') {
-  const dotenv = require('dotenv');
-  dotenv.load();
-}
+const vipadmin = auth.basic({realm: 'CNY Interactive Admin for VIPs'}, (admin, password, done) => {
+  done(admin === process.env.VIPADMIN && password === process.env.VIPPSWD);
+});
 
 const app = express();
 app.use(helmet());
@@ -32,6 +36,36 @@ app.get('/', auth.connect(technician), (req, res) => {
 
 app.get('/admin', auth.connect(admin), (req, res) => {
   res.render('admin');
+});
+
+app.get('/vipadminonly', auth.connect(vipadmin), (req, res) => {
+  res.render('vipadmin');
+});
+
+app.get('/api/vipadminonly', auth.connect(vipadmin), (req, res) => {
+  mongoose.connection.db.collection('wishes', (err, collection) => {
+    if (err) return res.status(500).send('Database Error');
+    collection.find({filtered: false}).toArray((err, docs) => {
+      if (err) return res.status(500).send('Database Error');
+      res.json(docs);
+    });
+  });
+});
+
+app.post('/api/vipadminonly', auth.connect(vipadmin), (req, res) => {
+  mongoose.connection.db.collection('wishes', (err, collection) => {
+    if (err) return res.status(500).send('Database Error');
+    collection.findOneAndUpdate(
+      { _id: mongoose.Types.ObjectId(req.body.id) },
+      {
+        $set: { filtered: true, isVip: true }
+      },
+      (err) => {
+        if (err) return res.status(500).send('Database Error');
+        res.status(200).send('Success');
+      }
+    );
+  });
 });
 
 app.get('/api/wishes/all', auth.connect(admin), (req, res) => {
