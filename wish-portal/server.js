@@ -17,7 +17,11 @@ app.set('view engine', 'ejs');
 app.use(express.static('./views/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(function(req, res, next) {
-  let allowedOrigins = ["http://cny-interactive.herokuapp.com", "http://chinatownfestivals.sg"];
+  let allowedOrigins = [
+    "http://cny-interactive.herokuapp.com",
+    "http://chinatownfestivals.sg",
+    "http://www.chinatownfestivals.sg"
+  ];
   let origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
        res.setHeader('Access-Control-Allow-Origin', origin);
