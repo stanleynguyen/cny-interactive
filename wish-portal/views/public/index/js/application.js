@@ -24,7 +24,7 @@ function submitWish(contentInput, authorInput) {
   $submitButton.value = '正在提交 / SUBMITTING...';
   var data = 'content=' + encodeURIComponent(contentInput.value) + '&author=' + encodeURIComponent(authorInput.value);
   var request = new XMLHttpRequest();
-  request.open('POST', '/' , true);
+  request.open('POST', 'http://cny-interactive.herokuapp.com/' , true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.onreadystatechange = function() {
     if (request.readyState === 4) {
