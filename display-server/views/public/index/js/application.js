@@ -7,7 +7,7 @@ var $wishContainer = $('#wish-container');
 
 $(document).ready(function() {
   fetchWishes(generateLantern);
-  setInterval(fetchWishes.bind(null, generateLantern), 3000);
+  setInterval(fetchWishes.bind(null, generateLantern), 5000);
 });
 
 function fetchWishes(callback) {
@@ -33,6 +33,8 @@ function generateLantern(err, wishes) {
     cachedWishes = wishes;
   }
 
+  if (wishes.length === 0) return;
+
   if (wishes.length > counter) {
     counter++;
     wish = wishes[counter-1];
@@ -52,7 +54,8 @@ function animateLaterns(id) {
   while (prevOffsetLeft && Math.abs(newOffsetLeft - prevOffsetLeft) < 200) newOffsetLeft = Math.random() * (window.innerWidth - 200);
   prevOffsetLeft = newOffsetLeft;
   thisLantern[0].style.left = newOffsetLeft + 'px';
-  var duration = 14000 + (Math.random() * 5000);
+  thisLantern[0].style.zIndex = Math.round(Math.random() * 0.8);
+  var duration = 30000 + (Math.random() * 5000);
   thisLantern.animate(
     {top: - thisLantern.height() + 'px'},
     duration,

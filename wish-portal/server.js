@@ -32,6 +32,8 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   let { content, author } = req.body;
+  content = (content.length > 70) ? content.substring(0, 70) : content;
+  author = (author.length > 20) ? author.substring(0, 20) : author;
   content = xss(content);
   author = xss(author);
   let time = Date.now();
