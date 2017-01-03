@@ -21,7 +21,7 @@ body {
 
 .mountain {
   position: absolute;
-  max-height: 50vh;
+  max-height: 45vh;
   max-width: 100vw;
   right: 0;
   bottom: 0;
@@ -31,13 +31,14 @@ body {
 .lantern {
 	background: url(/img/lantern.png) no-repeat;
   background-size: contain;
-	width: 200px;
-	min-height: 280px;
+	width: 300px;
+	min-height: 420px;
 	position: absolute;
 	top: 100%;
 
 	font-family: 'Bulo';
-	font-size: 18px;
+	font-size: 24px;
+  font-weight: 800;
 	color: #8b4513;
 	text-align: center;
 
@@ -98,25 +99,4 @@ body {
 	margin: 0;
 	line-height: 50px;
 	white-space: nowrap;
-	-webkit-animation: scroll 20s linear infinite;
-	animation: scroll 20s linear infinite;
-}
-
-@-webkit-keyframes scroll {
-	0% { -webkit-transform: translateX(100%); }
-	100% { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes scroll {
-	0% {
-		moz-transform: translateX(100%);
-		webkit-transform: translateX(100%);
-		-webkit-transform: translateX(100%);
-		        transform: translateX(100%);
-	}
-	100% {
-		moz-transform: translateX(-100%);
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
- 	}
 }
