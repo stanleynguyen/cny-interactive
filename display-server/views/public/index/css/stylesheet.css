@@ -81,16 +81,14 @@ body {
 }
 
 .scroll {
-	height: 50px;
-	overflow: hidden;
 	position: relative;
 	background: none;
 }
 
 .scroll p {
 	font-family: 'Bulo';
-	font-size: 36px;
-	font-weight: 400;
+	font-size: 40px;
+	font-weight: 800;
 	color: #f44336;
 	text-align: center;
 	display: block;
@@ -105,7 +103,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	height: 120px;
+	height: 150px;
 }
 
 .fireworks > .before, .fireworks > .after {

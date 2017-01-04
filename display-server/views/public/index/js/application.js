@@ -47,8 +47,8 @@ function generateLantern(err, wishes) {
     wish = wishes[randomIndex];
   }
 
-  isChineseAndShort = wish.content.match(/[\u3400-\u9FBF]/) && wish.content.length < 40;
-  isChineseAndLong = wish.content.match(/[\u3400-\u9FBF]/) && wish.content.length > 40;
+  isChineseAndShort = wish.content.match(/[\u3400-\u9FBF]/) && wish.content.length < 30;
+  isChineseAndLong = wish.content.match(/[\u3400-\u9FBF]/) && wish.content.length > 30;
   $wishContainer.append($(lantern(lanternCounter, wish)))
     .promise()
     .done(animateLaterns.bind(null, lanternCounter, isChineseAndShort, isChineseAndLong, isVip));
@@ -68,9 +68,9 @@ function animateLaterns(id, isChineseAndShort, isChineseAndLong, isVip) {
     thisLantern[0].style.minHeight = '350px';
     thisLantern[0].style.fontSize = '22px';
   }
-  if (isChineseAndShort) thisLantern[0].style.fontSize = '26px';
-  else if (isChineseAndLong && zIndex === 1) thisLantern[0].style.fontSize = '20px';
-  else if (isChineseAndLong && zIndex === 2) thisLantern[0].style.fontSize = '22px';
+  if (isChineseAndShort) thisLantern[0].style.fontSize = '30px';
+  else if (isChineseAndLong && zIndex === 1) thisLantern[0].style.fontSize = '22px';
+  else if (isChineseAndLong && zIndex === 2) thisLantern[0].style.fontSize = '24px';
   else if (isVip) {
     thisLantern[0].style.zIndex = 3;
     thisLantern[0].style.width = '400px';
