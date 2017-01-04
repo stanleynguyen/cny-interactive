@@ -101,6 +101,13 @@ body {
 	white-space: nowrap;
 }
 
+.logo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 120px;
+}
+
 .fireworks > .before, .fireworks > .after {
   display: none;
   position: absolute;
