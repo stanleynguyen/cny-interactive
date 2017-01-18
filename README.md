@@ -1,25 +1,21 @@
-# CNY Interactive Wishes Stream
+# Huat Greetings Wall
 
-### Project Dir
+Interactive Wall for Chinatown New Year Festival 2017. This is part of SUTD contribution to Chinatown for Chinese New Year 2017.
 
-``` /display-server ``` : server for serving the big-screen display
+![portal](./docs/img/cny.png)
+![big display](./docs/img/cny.gif)
 
-``` /wish-portal ```: server for receiving the wishes
+Passer-by of the "Huat Greetings Wall" (giant LED display on Garden Bridge) can send in well-wishes from [Chinatown Festival Website](http://chinatownfestivals.sg/huatgreetings/). The wishes will then be screen on the Interactive Wall in form of lanterns floating up to the sky.
 
-### Getting started
+<div style="width: 30%;">
+  We are honored to have a chance to present this project to Singapore President Tony Tan and also receive coverage from media.
+  <br/>
+  <a href="http://www.straitstimes.com/multimedia/photos/in-pictures-chinatown-lights-up-for-the-2017-chinese-new-year-celebrations" target="_blank">The Straits Times</a>
+  <br/>
+  <a href="http://www.todayonline.com/entertainment/largest-number-lanterns-and-car-boot-sale-tons-enjoy-chinatown-chinese-new-year" target="_blank">TODAY</a>
+  <br/>
+  <a href="https://www.familiesforlife.sg/unite-at-an-event/Pages/Chinatown-Chinese-New-Year-2017.aspx" target="_blank">Families For Life</a>
+</div>
+<img style="width: 69%;" src="./docs/img/presentation.jpeg" />
 
-- start development
-```
-git clone git@github.com:stanleynguyen/cny-interactive.git
-cd <whichever directory of the project u're working on>
-npm install
-npm run dev
-```
-
-- committing changes
-```
-npm run lint
-//if code style accepted (i.e, no error thrown)
-git commit <however you want to commit with a clear description>
-//otherwise go back to code and clear all the violations
-```
+### 
