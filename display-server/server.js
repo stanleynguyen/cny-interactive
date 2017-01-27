@@ -9,10 +9,6 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const auth = require('http-auth');
 
-const technician = auth.basic({ realm: 'CNY Interactive Technician' }, (technician, password, done) => {
-  done(technician === process.env.TECHNICIAN && password === process.env.PASSWORD);
-});
-
 const admin = auth.basic({realm: 'CNY Interactive Admin'}, (admin, password, done) => {
   done(admin === process.env.ADMIN && password === process.env.PSSWD);
 });
@@ -30,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect(process.env.DB);
 mongoose.Promise = global.Promise;
 
-app.get('/', auth.connect(technician), (req, res) => {
+app.get('/', (req, res) => {
   res.render('index');
 });
 
@@ -88,7 +84,7 @@ app.get('/api/wishes/unfiltered', auth.connect(admin), (req, res) => {
   });
 });
 
-app.get('/api/wishes/filtered', auth.connect(technician), (req, res) => {
+app.get('/api/wishes/filtered', (req, res) => {
   mongoose.connection.db.collection('wishes', (err, collection) => {
     if (err) return res.status(500).send('Database Error');
     collection.find({filtered: true}).toArray((err, docs) => {
