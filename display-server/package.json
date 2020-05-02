@@ -24,7 +24,7 @@
     "express": "^4.14.0",
     "helmet": "^3.1.0",
     "http-auth": "^3.1.1",
-    "mongoose": "^4.7.3"
+    "mongoose": "^5.9.11"
   },
   "devDependencies": {
     "dotenv": "^2.0.0",
