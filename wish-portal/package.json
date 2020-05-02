@@ -25,7 +25,7 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "helmet": "^3.1.0",
-    "mongoose": "^4.7.2",
+    "mongoose": "^5.9.11",
     "stream-browserify": "^2.0.1",
     "xss": "^0.3.2"
   },
